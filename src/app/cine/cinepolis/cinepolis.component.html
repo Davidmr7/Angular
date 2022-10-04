@@ -1,0 +1,75 @@
+<body class="text-white">
+<h1 class="text-center">Cinepolis</h1>
+
+<hr>
+<div>
+    <div class="row">
+        
+        <div class="col-6" name="Parte1">
+            <h1>Entradas</h1>
+         <div class="mb-3 row">
+            <label for="num1" class="col-sm-2 col-form-label text-center">Nombre</label>
+            <div class="col-sm-8">
+              <input type="text" [(ngModel)]="nombre" name="num1" class="form-control" id="num1">
+            </div>
+         </div>
+          <div class="mb-3 row">
+            <label for="num2" class="col-sm-2 col-form-label text-center">Cantidad de compradores</label>
+            <div class="col-sm-8">
+              <input type="text" [(ngModel)]="compradores" name="num2" class="form-control" id="num2">
+            </div>
+        </div>
+        <div>Tarjeta Cineco
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" [(ngModel)]="box" name="box1" id="box1" value="true" >
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Si
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" [(ngModel)]="box"  name="box2" id="box2" value="false" >
+                <label class="form-check-label" for="flexRadioDefault2">
+                  No
+                </label>
+              </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="num2" class="col-sm-2 col-form-label  text-center">Cantidad de boletas</label>
+            <div class="col-sm-8">
+              <input type="text" [(ngModel)]="boletos" name="num2" class="form-control" id="num2">
+            </div>
+        </div>
+     </div>
+     <div class="col-6" name="Parte2">
+        <h1>Salidas</h1>
+        <div class="mb-3 row">
+           <label for="num1" class="col-form-label text-white ">Valor a pagar</label>
+           <div class="col-sm-6" *ngIf="activarError">
+            <p id="error">{{mensaje}}</p>
+          </div>
+           <div class="col-sm-6 card" *ngIf="activar">
+             <p>Comprador: {{nombre}}</p>
+             <p>Numero de compradores: {{compradores}}</p>
+             <p>{{boletos}} Boletos comprados</p>
+             <p>Boletos por persona: {{boletoPersona.toFixed(1)}}</p>
+             <p>El total es: {{total | currency}} </p>
+             <p *ngIf="activarDescuento">Descuento: {{descuento | currency}}</p>
+             <p id="total">{{newTotal}}</p>
+             <p id="t" *ngIf="activarTarjeta">Se aplico el 10% de descuento de la Tarjeta Cineco su Total Final es de: {{totalTarjeta | currency}}</p>
+           </div>
+        </div>
+     </div>
+    </div>
+     <div>
+        <h1>Acciones</h1>
+        <div class="btn-toolbar">
+            <button id="boton2" class="btn btn-primary btn-block" (click)="procesar()">Procesar</button>
+            
+            <button class="btn btn-danger"routerLink="" id="boton1">Salir</button>
+            <button class="btn btn-danger" (click)="activar=false" (click)="activarError=false" id="boton3">Vaciar</button>
+          </div>
+          
+     </div>
+    
+</div>
+</body>

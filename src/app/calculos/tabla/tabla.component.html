@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-6">
+        <div class="mb-3 row">
+            <h3>Tablas</h3>
+            <label for="num1" class="col-sm-2 col-form-label">Numero1</label>
+            <div class="col-sm-10">
+              <input type="text" [(ngModel)]="numeroTabla" name="numeroTabla" class="form-control" id="numeroTabla">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <button (click)="tablas()"  class="btn btn-primary">Calcular Tablas</button>
+          </div>
+    </div>
+    <div  class="col-6" >
+        <tbody>
+            <tr *ngFor="let tablas of tablasMulti">
+
+                <td>{{tablas}}</td>
+            </tr>
+        </tbody>  
+    </div>
+</div>
