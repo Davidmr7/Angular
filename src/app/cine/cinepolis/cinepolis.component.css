@@ -2,6 +2,9 @@ body{
     background-image: url(https://fandompelicula.com/wp-content/uploads/2022/04/Cinepolis-Logo.jpg);
     /*background-color: darkslateblue;*/
     background-size: cover;
+    width: 1279px;
+    margin-left: -82px;
+    
   
 }
 #total{
@@ -24,5 +27,11 @@ p{
     margin-left: 10px;
 }
 .form-control{
-    background-color: rgb(179, 212, 255);
+    background-color: rgb(250, 252, 255);
+}
+#label1{
+    box-shadow: 10px;
+}
+#con1{
+    
 }
